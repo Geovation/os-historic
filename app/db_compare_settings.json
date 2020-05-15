@@ -1,0 +1,26 @@
+{
+    "current_version_db":{
+        "host":"localhost",
+        "username":"postgres",
+        "password":"",
+        "port":4432,
+        "db_name":"osmm_topo",
+        "version_name":"2019-AUG"
+    },
+    "previous_version_db":[{
+        "host":"localhost",
+        "username":"postgres",
+        "password":"andreas",
+        "port":7432,
+        "db_name":"osmm_2018",
+        "version_name":"2018-JAN"
+    },
+    {
+        "host":"localhost",
+        "username":"postgres",
+        "password":"andreas",
+        "port":7432,
+        "db_name":"osmm_2017",
+        "version_name":"2017-oct"
+    }]
+}
