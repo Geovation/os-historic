@@ -53,9 +53,14 @@ def GenerateResultsView(featureName, configCurrentDb):
     currentVersionDB.ExecuteQueryAsTableOrView(query,"V_VERSION_IDENTIFIED_" + featureName,"view")
 
 if __name__ == "__main__":
+    
+    bbox = [531195.2968,170817.8032,536873.2005,180696.8954]
     config = ReadConfig(os.path.join(os.getcwd(),"app","db_compare_settings.json"))
+
     featureName = "Building"
     attributeQuery = "ARRAY_TO_STRING(descriptivegroup,',') like '%" + featureName + "%'"
     tracker = TopographyLayerTrackerDb(config)
-    labels = tracker.SetVersionLabel(attributeQuery,"toid",[531195.2968,170817.8032,536873.2005,180696.8954], True)
-    print(labels)
+    
+    labels = tracker.SetVersionLabel(attributeQuery,"toid",bbox, True)
+    tracker.SaveResultsAsViewOrTable("V_MyResults","view")
+    #print(labels)
